@@ -670,6 +670,20 @@ gcc_jit_context_new_array_type (gcc_jit_context *ctxt,
 				gcc_jit_type *element_type,
 				int num_elements);
 
+/* Given type "T", get type "T[N]" (for a constant N).
+
+   This API entrypoint was added in LIBGCCJIT_ABI_28; you can test for its
+   presence using
+     #ifdef LIBGCCJIT_HAVE_gcc_jit_context_new_array_type_unsigned_long
+*/
+extern gcc_jit_type *
+gcc_jit_context_new_array_type_unsigned_long (gcc_jit_context *ctxt,
+					      gcc_jit_location *loc,
+					      gcc_jit_type *element_type,
+					      unsigned long num_elements);
+
+#define LIBGCCJIT_HAVE_gcc_jit_context_new_array_type_unsigned_long
+
 /* Struct-handling.  */
 
 /* Create a field, for use within a struct or union.  */
