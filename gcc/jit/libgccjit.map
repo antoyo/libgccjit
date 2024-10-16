@@ -293,4 +293,8 @@ LIBGCCJIT_ABI_27 {
 LIBGCCJIT_ABI_28 {
   global:
     gcc_jit_context_new_alignof;
-} LIBGCCJIT_ABI_27;
+
+LIBGCCJIT_ABI_29 {
+  global:
+    gcc_jit_context_new_array_type_unsigned_long;
+} LIBGCCJIT_ABI_28;

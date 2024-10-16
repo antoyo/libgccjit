@@ -73,6 +73,13 @@
 #undef create_code
 #undef verify_code
 
+/* test-arrays-unsigned-long.c */
+#define create_code create_code_arrays_unsigned_long
+#define verify_code verify_code_arrays_unsigned_long
+#include "test-arrays-unsigned-long.c"
+#undef create_code
+#undef verify_code
+
 /* test-autovectorize.c */
 #define create_code create_code_autovectorize
 #define verify_code verify_code_autovectorize
@@ -474,6 +481,9 @@ const struct testcase testcases[] = {
   {"arrays",
    create_code_arrays,
    verify_code_arrays},
+  {"arrays-unsigned-long",
+   create_code_arrays_unsigned_long,
+   verify_code_arrays_unsigned_long},
   {"autovectorize",
    create_code_autovectorize,
    verify_code_autovectorize},
