@@ -570,7 +570,8 @@ new_function (location *loc,
 					  std::string>> &string_attributes,
 	      const std::vector<std::pair<gcc_jit_fn_attribute,
 					  std::vector<int>>>
-					  &int_array_attributes)
+					  &int_array_attributes,
+	      int is_target_builtin)
 {
   int i;
   param *param;
@@ -605,6 +606,15 @@ new_function (location *loc,
   DECL_CONTEXT (resdecl) = fndecl;
 
   tree fn_attributes = NULL_TREE;
+
+  if (is_target_builtin)
+  {
+    tree *decl = target_builtins.get (name);
+    if (decl != NULL)
+      fndecl = *decl;
+    else
+      add_error (loc, "cannot find target builtin %s", name);
+  }
 
   if (builtin_id)
     {
