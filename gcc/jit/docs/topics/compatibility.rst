@@ -404,3 +404,16 @@ on functions and variables:
 --------------------
 ``LIBGCCJIT_ABI_28`` covers the addition of
 :func:`gcc_jit_context_new_alignof`
+
+.. _LIBGCCJIT_ABI_29:
+
+``LIBGCCJIT_ABI_29``
+--------------------
+``LIBGCCJIT_ABI_29`` covers the addition of functions to query the target
+information:
+
+  * :func:`gcc_jit_context_get_target_info`
+  * :func:`gcc_jit_target_info_release`
+  * :func:`gcc_jit_target_info_cpu_supports`
+  * :func:`gcc_jit_target_info_arch`
+  * :func:`gcc_jit_target_info_supports_target_dependent_type`
