@@ -57,6 +57,12 @@ typedef struct gcc_jit_context gcc_jit_context;
 /* A gcc_jit_result encapsulates the result of an in-memory compilation.  */
 typedef struct gcc_jit_result gcc_jit_result;
 
+/* A gcc_jit_target_info encapsulates the target info.  */
+typedef struct gcc_jit_target_info gcc_jit_target_info;
+
+/* A gcc_jit_target_info encapsulates the target info.  */
+typedef struct gcc_jit_target_info gcc_jit_target_info;
+
 /* An object created within a context.  Such objects are automatically
    cleaned up when the context is released.
 
@@ -2063,6 +2069,22 @@ extern void
 gcc_jit_function_add_string_attribute (gcc_jit_function *func,
 				       enum gcc_jit_fn_attribute attribute,
 				       const char* value);
+
+extern gcc_jit_target_info *
+gcc_jit_context_get_target_info (gcc_jit_context *ctxt);
+
+extern void
+gcc_jit_target_info_release (gcc_jit_target_info *info);
+
+extern int
+gcc_jit_target_info_cpu_supports (gcc_jit_target_info *info,
+                 const char *feature);
+
+extern const char *
+gcc_jit_target_info_arch (gcc_jit_target_info *info);
+
+extern int
+gcc_jit_target_info_supports_target_dependent_type(gcc_jit_target_info *info, enum gcc_jit_types type);
 
 extern void
 gcc_jit_function_add_integer_array_attribute (
