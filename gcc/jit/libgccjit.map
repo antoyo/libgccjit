@@ -294,3 +294,12 @@ LIBGCCJIT_ABI_28 {
   global:
     gcc_jit_context_new_alignof;
 } LIBGCCJIT_ABI_27;
+
+LIBGCCJIT_ABI_29 {
+  global:
+    gcc_jit_context_get_target_info;
+    gcc_jit_target_info_release;
+    gcc_jit_target_info_cpu_supports;
+    gcc_jit_target_info_arch;
+    gcc_jit_target_info_supports_target_dependent_type;
+} LIBGCCJIT_ABI_28;
