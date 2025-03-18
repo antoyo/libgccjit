@@ -269,6 +269,12 @@ public:
   void
   set_output_ident (const char *output_ident);
 
+  bool
+  get_abort_on_unsupported_target_builtin ();
+
+  void
+  set_abort_on_unsupported_target_builtin ();
+
   void
   set_int_option (enum gcc_jit_int_option opt,
 		  int value);
@@ -411,6 +417,8 @@ private:
 
   type *m_basic_types[NUM_GCC_JIT_TYPES];
   type *m_FILE_type;
+
+  bool m_abort_on_unsupported_target_builtin = false;
 
   builtins_manager *m_builtins_manager; // lazily created
 };
