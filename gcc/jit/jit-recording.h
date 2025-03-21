@@ -329,6 +329,9 @@ public:
 		   const char *output_path);
 
   void
+  populate_target_info ();
+
+  void
   add_error (location *loc, const char *fmt, ...)
       GNU_PRINTF(3, 4);
 
@@ -411,6 +414,8 @@ private:
 
   type *m_basic_types[NUM_GCC_JIT_TYPES];
   type *m_FILE_type;
+
+  bool m_populated_target_info = false;
 
   builtins_manager *m_builtins_manager; // lazily created
 };
