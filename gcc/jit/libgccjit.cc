@@ -3900,6 +3900,14 @@ gcc_jit_context_set_output_ident (gcc_jit_context *ctxt,
   ctxt->set_output_ident (output_ident);
 }
 
+void
+gcc_jit_context_set_abort_on_unsupported_target_builtin (gcc_jit_context *ctxt)
+{
+  RETURN_IF_FAIL (ctxt, NULL, NULL, "NULL context");
+
+  ctxt->set_abort_on_unsupported_target_builtin ();
+}
+
 /* Public entrypoint.  See description in libgccjit.h.
 
    After error-checking, the real work is done by the

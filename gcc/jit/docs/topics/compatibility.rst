@@ -453,3 +453,11 @@ temporary variable:
 ``LIBGCCJIT_ABI_34`` covers the addition of
 
  * :func:`gcc_jit_context_set_output_ident`
+
+.. _LIBGCCJIT_ABI_35:
+
+``LIBGCCJIT_ABI_35``
+--------------------
+``LIBGCCJIT_ABI_35`` covers the addition of
+
+ * :func:`gcc_jit_context_set_abort_on_unsupported_target_builtin`

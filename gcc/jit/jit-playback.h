@@ -323,6 +323,11 @@ public:
 
   void add_top_level_asm (const char *asm_stmts);
 
+  bool get_abort_on_unsupported_target_builtin () const
+  {
+    return m_recording_ctxt->get_abort_on_unsupported_target_builtin ();
+  }
+
 private:
   void dump_generated_code ();
 
